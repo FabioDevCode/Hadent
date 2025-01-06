@@ -1,0 +1,22 @@
+<main class="flex flex-col items-center justify-center h-screen">
+
+    <img style="height: 150px;" src="/img/hadent_white.svg">
+    <h1 class="text-3xl font-bold p-6">
+        Hadent
+    </h1>
+
+    <p>
+        Boilerplate - Node.js, Express.js, Handlebars.js, Alpine.js, TailwindCSS & DaisyUI
+    </p>
+
+    <br>
+
+    <div x-data="{ count: 0 }" class="font-bold flex flex-col w-32 gap-4 items-center">
+        <span x-text="count" class=""></span>
+        <div class="flex gap-1">
+            <button class="btn" x-on:click="count++">Increment</button>
+            <button class="btn" x-on:click="count--">Decrement</button>
+        </div>
+    </div>
+
+</main>

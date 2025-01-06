@@ -1,0 +1,40 @@
+{
+  "name": "hadent",
+  "version": "1.0.0",
+  "description": "Boilerplate Node.js SSR",
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node --watch server.js"
+  },
+  "author": "Fabio RAMOS LOPES",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "console-stamp": "^3.1.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "dayjs": "^1.11.13",
+    "dompurify": "^3.2.3",
+    "express": "^4.21.2",
+    "express-handlebars": "^8.0.1",
+    "fs-extra": "^11.2.0",
+    "handlebars": "^4.7.8",
+    "helmet": "^8.0.0",
+    "i18n": "^0.15.1",
+    "jsonwebtoken": "^9.0.2",
+    "mariadb": "^3.4.0",
+    "morgan": "^1.10.0",
+    "sequelize": "^6.37.5",
+    "split": "^1.0.1",
+    "xss": "^1.0.15"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4"
+  }
+}
