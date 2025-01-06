@@ -9,5 +9,3 @@ Boilerplate SSR - ES Module
 - FontAwesome
 - TailwindCSS
 - DaisyUI
-
-Boilerplate - Node.js, Express.js, Handlebars.js, Alpine.js, TailwindCSS & DaisyUI
