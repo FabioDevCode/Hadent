@@ -1,6 +1,7 @@
 import * as path from "node:path";
 import consoleStamp from "console-stamp";
 import cookieParser from "cookie-parser";
+import helmet from "helmet";
 import cors from "cors";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone.js";
@@ -67,7 +68,9 @@ consoleStamp(console, {
 //     console.error("Error sync database:", err);
 // });
 
+app.disable('x-powered-by');
 app.use(cors());
+app.use(helmet());
 app.use(cookieParser());
 app.use(i18n.init);
 app.use(express.static(`${__dirname}/public`));
