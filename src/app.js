@@ -10,7 +10,10 @@ import express from "express";
 import i18n from "i18n";
 import morgan from "morgan";
 import split from "split";
+
 import routes from "./routes/index.js";
+import helmet_config from "../src/config/helmet.js";
+
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -69,8 +72,8 @@ consoleStamp(console, {
 // });
 
 app.disable('x-powered-by');
+app.use(helmet(helmet_config));
 app.use(cors());
-app.use(helmet());
 app.use(cookieParser());
 app.use(i18n.init);
 app.use(express.static(`${__dirname}/public`));
