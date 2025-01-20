@@ -8,8 +8,11 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "node --watch server.js"
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "format": "npx @biomejs/biome format --write ./src",
+		"lint": "npx @biomejs/biome lint --write ./src",
+		"biome": "npx @biomejs/biome check --write ./src"
   },
   "author": "Fabio RAMOS LOPES",
   "license": "ISC",
@@ -23,6 +26,7 @@
     "dompurify": "^3.2.3",
     "express": "^4.21.2",
     "express-handlebars": "^8.0.1",
+    "express-mysql-session": "^3.0.3",
     "express-rate-limit": "^7.5.0",
     "express-session": "^1.18.1",
     "fs-extra": "^11.2.0",
@@ -32,7 +36,6 @@
     "jsonwebtoken": "^9.0.2",
     "mariadb": "^3.4.0",
     "morgan": "^1.10.0",
-    "passport": "^0.7.0",
     "sequelize": "^6.37.5",
     "split": "^1.0.1",
     "xss": "^1.0.15"

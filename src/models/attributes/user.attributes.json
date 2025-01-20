@@ -1,0 +1,31 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "allowNull": false,
+        "primaryKey": true
+    },
+    "uuid": {
+        "type": "UUID",
+        "allowNull": false,
+        "unique": true,
+        "primaryKey": true
+    },
+    "email": {
+        "type": "STRING",
+        "allowNull": false
+    },
+    "login": {
+        "type": "STRING(100)",
+        "allowNull": false,
+        "unique": true
+    },
+    "password": {
+        "type": "STRING",
+        "allowNull": true
+    },
+    "last_connection": {
+        "type": "DATE",
+        "allowNull": true
+    }
+}

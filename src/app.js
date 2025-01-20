@@ -14,7 +14,6 @@ import split from "split";
 import routes from "./routes/index.js";
 import helmet_config from "../src/config/helmet.js";
 
-
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
@@ -61,16 +60,30 @@ consoleStamp(console, {
 	dateSuffix: "",
 });
 
-// import models from "./models/index.js";
-// await models.sequelize
-// .sync()
-// .then(() => {
-//     console.log("Database & tables updated !");
-// })
-// .catch((err) => {
-//     console.error("Error sync database:", err);
-// });
+import models from "./models/index.js";
+await models.sequelize
+.sync()
+.then(() => {
+    console.log("Database & tables updated !");
+})
+.catch((err) => {
+    console.error("Error sync database:", err);
+});
 
+import { sanitizeBody } from "./utils/security.js";
+
+app.use((req, res, next) => {
+    if (req.body) {
+        req.body = sanitizeBody(req.body);
+    }
+    if (req.query) {
+        req.query = sanitizeBody(req.query);
+    }
+    if (req.params) {
+        req.params = sanitizeBody(req.params);
+    }
+    next();
+});
 app.disable('x-powered-by');
 app.use(helmet(helmet_config));
 app.use(cors());
@@ -79,6 +92,29 @@ app.use(i18n.init);
 app.use(express.static(`${__dirname}/public`));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+import database from "./config/database.js";
+import session from "express-session";
+import MySQLStoreConstructor from 'express-mysql-session';
+const MySQLStore = MySQLStoreConstructor(session);
+
+const sessionStore = new MySQLStore(database);
+
+app.use(session({
+	name: "hadent",
+	secret: "example_secret",
+	store: sessionStore,
+	resave: false,
+	saveUninitialized: false,
+	cookie: {
+		secure: process.env.NODE_ENV === 'production', // true if https (HTTPS requis)
+		httpOnly: true,
+		maxAge: 24 * 60 * 60 * 1000, // 1 jour
+		sameSite: 'lax',
+	},
+	rolling: false,
+	unset: 'destroy'
+}))
 
 import { create } from "express-handlebars";
 import hbs_fn from "./helpers/hbs_fn.js";
