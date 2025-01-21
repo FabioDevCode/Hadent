@@ -39,7 +39,8 @@ const morgan_config = {
 			req.url.includes("/css") ||
 			req.url.includes("/img") ||
 			req.url.includes("/js") ||
-			req.url.includes("/plugins")
+			req.url.includes("/plugins") ||
+			req.url.includes("/favicon.ico")
 		) {
 			return true;
 		}
@@ -120,7 +121,7 @@ import { create } from "express-handlebars";
 import hbs_fn from "./helpers/hbs_fn.js";
 
 const hbs = create({
-	defaultLayout: "main", // layout or false
+	defaultLayout: "_main", // layout or false
 	layoutsDir: `${__dirname}/views/layouts`, // layout folder name
 	partialsDir: `${__dirname}/views/partials`, // partials folder name
 	extname: ".hbs",

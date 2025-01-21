@@ -1,0 +1,9 @@
+body, html {
+    /* overflow: hidden !important; */
+    overscroll-behavior: none;
+}
+
+main {
+    overflow: auto;
+    height: 100%
+}

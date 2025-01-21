@@ -1,4 +1,33 @@
-<main class="flex flex-col items-center justify-center h-screen">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {{!-- Fontawesome --}}
+    <link  href="/plugins/fontawesome/fontawesome-all.min.css" rel="stylesheet" />
+    {{!-- Toastify --}}
+    <link href="/plugins/toastify/toastify.css" rel="stylesheet"/>
+    <script src="/plugins/toastify/toastify.js"></script>
+    {{!-- DaisyUI --}}
+    <link href="/plugins/daisyUI/daisyui.min.css" rel="stylesheet">
+    {{!-- TailwindCSS --}}
+    <script src="/plugins/tailwindcss/tailwindcss.min.js"></script>
+    {{!-- Apline.js --}}
+    <script defer src="/plugins/alpine/apline.min.js"></script>
+
+    {{!-- CUSTOM --}}
+    <link rel="stylesheet" href="/css/style.css">
+    <script defer type="module" src="/js/index.mjs"></script>
+
+    {{!-- Title --}}
+    <title>
+        Hadent
+    </title>
+</head>
+<body>
+    <main class="flex flex-col items-center justify-center h-screen">
 
     <img style="height: 150px;" src="/img/hadent_white.svg">
     <h1 class="text-3xl font-bold p-6">
@@ -18,5 +47,7 @@
             <button class="btn" x-on:click="count--">Decrement</button>
         </div>
     </div>
-
 </main>
+</body>
+</html>
+
