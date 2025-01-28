@@ -61,15 +61,15 @@ consoleStamp(console, {
 	dateSuffix: "",
 });
 
-import models from "./models/index.js";
-await models.sequelize
-.sync()
-.then(() => {
-    console.log("Database & tables updated !");
-})
-.catch((err) => {
-    console.error("Error sync database:", err);
-});
+// import models from "./models/index.js";
+// await models.sequelize
+// .sync()
+// .then(() => {
+//     console.log("Database & tables updated !");
+// })
+// .catch((err) => {
+//     console.error("Error sync database:", err);
+// });
 
 import { sanitizeBody } from "./utils/security.js";
 
@@ -94,28 +94,28 @@ app.use(express.static(`${__dirname}/public`));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-import database from "./config/database.js";
-import session from "express-session";
-import MySQLStoreConstructor from 'express-mysql-session';
-const MySQLStore = MySQLStoreConstructor(session);
+// import database from "./config/database.js";
+// import session from "express-session";
+// import MySQLStoreConstructor from 'express-mysql-session';
+// const MySQLStore = MySQLStoreConstructor(session);
 
-const sessionStore = new MySQLStore(database);
+// const sessionStore = new MySQLStore(database);
 
-app.use(session({
-	name: "hadent",
-	secret: "example_secret",
-	store: sessionStore,
-	resave: false,
-	saveUninitialized: false,
-	cookie: {
-		secure: process.env.NODE_ENV === 'production', // true if https (HTTPS requis)
-		httpOnly: true,
-		maxAge: 24 * 60 * 60 * 1000, // 1 jour
-		sameSite: 'lax',
-	},
-	rolling: false,
-	unset: 'destroy'
-}))
+// app.use(session({
+// 	name: "hadent",
+// 	secret: "example_secret",
+// 	store: sessionStore,
+// 	resave: false,
+// 	saveUninitialized: false,
+// 	cookie: {
+// 		secure: process.env.NODE_ENV === 'production', // true if https (HTTPS requis)
+// 		httpOnly: true,
+// 		maxAge: 24 * 60 * 60 * 1000, // 1 jour
+// 		sameSite: 'lax',
+// 	},
+// 	rolling: false,
+// 	unset: 'destroy'
+// }))
 
 import { create } from "express-handlebars";
 import hbs_fn from "./helpers/hbs_fn.js";
