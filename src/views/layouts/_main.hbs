@@ -16,11 +16,22 @@
                 <div class="mx-2 flex-1 px-2">
                     {{!--  --}}
                 </div>
-                <div class="flex-none lg:block">
-                    <ul class="menu menu-horizontal">
-                        <!-- Navbar menu content here -->
-                        <li><a>Navbar Item 2</a></li>
-                    </ul>
+                <div class="flex items-center lg:block">
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="avatar">
+                            <div class="w-10 rounded mt-1.5 mr-1.5">
+                                <img src="/img/profil.jpeg" alt="this person does not exist" />
+                            </div>
+                        </div>
+                        <ul tabindex="0" class="dropdown-content menu bg-base-200 rounded-box z-[1] w-52 p-2 shadow">
+                            <li>
+                                <a>
+                                    <i class="fas fa-sign-out-alt"></i>
+                                    Se déconnecter
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <main class="w-full p-4">
