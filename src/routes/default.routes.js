@@ -1,10 +1,16 @@
 import express from "express";
 const router = express.Router();
-import * as dctl from "../controllers/default.controllers.js";
+import * as ctl from "../controllers/default.controllers.js";
+
+router.get("/", ctl.index);
+router.get("/login", ctl.login);
+
+// CONNECTION ACCESS =========================== //
+router.get("/home", ctl.home);
 
 
-router.get("/", dctl.index);
-router.get("/login", dctl.login);
-router.get("/home", dctl.home);
+// first_login
+// login
+
 
 export default router;
