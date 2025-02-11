@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="night">
+<html lang="fr" data-theme="light">
 <head>
     {{> head}}
 </head>
@@ -7,14 +7,14 @@
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col items-center justify-start">
-            <div class="navbar bg-base-300 w-full sticky">
+            <div class="navbar bg-base-100 w-full sticky">
                 <div class="flex-none lg:hidden">
-                    <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-noover" style="color: white;">
+                    <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-noover">
                         <i class="fas fa-bars"></i>
                     </label>
                 </div>
                 <div class="mx-2 flex-1 px-2">
-                    <div class="badge badge-neutral">0.0.0-Beta</div>
+                    <div class="badge badge-outline">Beta</div>
                 </div>
                 <div class="flex items-center lg:block">
                     <div class="dropdown dropdown-end">
@@ -23,7 +23,7 @@
                                 <img src="/img/user-icon.jpg" alt="user icon" />
                             </div>
                         </div>
-                        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow">
+                        <ul tabindex="0" class="dropdown-content menu bg-base-300 rounded-box w-52 p-2 shadow relative">
                             <li>
                                 <a>
                                     <i class="fas fa-sign-out-alt"></i>
@@ -34,20 +34,20 @@
                     </div>
                 </div>
             </div>
-            <main class="w-full p-4 flex flex-wrap gap-4">
+            <main class="w-full px-4 flex flex-wrap gap-4 bg-base-100">
                 {{!-- BODY --}}
                 {{{body}}}
             </main>
         </div>
         <div class="drawer-side">
             <label for="my-drawer-2" aria-label="close sidebar" class="drawer-overlay"></label>
-            <div class="menu bg-base-200 text-base-content min-h-full w-72 p-4">
+            <div class="menu bg-base-100 text-base-content min-h-full w-64 p-4">
                 <div class="flex items-center text-2xl gap-4 px-4 mb-6 text-base-content font-extrabold" style="height: 40px;">
                     <img class="h-9" src="/img/hadent_white.svg" alt="Hadent logo">
                     Hadent
                 </div>
 
-                <ul class="menu-lg bg-base-200 text-base-content min-h-full p-0">
+                <ul class="menu bg-base-100 text-base-content min-h-full p-0">
                     <li class="menu-title">
                         Main
                     </li>
@@ -63,7 +63,7 @@
 
                 <div class="divider"></div>
 
-                <ul class="menu-lg bg-base-200 text-base-content min-h-full p-0">
+                <ul class="menu bg-base-100 text-base-content min-h-full p-0">
                     <li>
                         <details close="">
                             <summary>Module</summary>

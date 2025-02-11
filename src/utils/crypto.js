@@ -1,8 +1,8 @@
-import { KEY_ONE, KEY_TWO } from "../config/keys.json" assert { type: "json" };
 import CryptoJS from "crypto-js";
+import { KEY_ONE, KEY_TWO } from "../config/keys.json" assert { type: "json" };
 
 class Crypt {
-    encryptObject(object) {
+	encryptObject(object) {
 		const data = JSON.stringify(object);
 		return Buffer.from(
 			CryptoJS.AES.encrypt(data, KEY_ONE, { iv: KEY_TWO }).toString(),
@@ -24,6 +24,6 @@ class Crypt {
 			CryptoJS.enc.Utf8,
 		);
 	}
-};
+}
 
 export default new Crypt();

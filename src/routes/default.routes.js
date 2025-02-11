@@ -8,9 +8,7 @@ router.get("/login", ctl.login);
 // CONNECTION ACCESS =========================== //
 router.get("/home", ctl.home);
 
-
 // first_login
 // login
-
 
 export default router;

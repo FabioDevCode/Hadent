@@ -1,3 +1,3 @@
 export default {
-    "default.routes.js": { path: "/", middlewares: [] }
+	"default.routes.js": { path: "/", middlewares: [] },
 };

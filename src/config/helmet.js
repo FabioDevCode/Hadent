@@ -1,5 +1,5 @@
 export default {
-	frameguard: process.env.IS_GENERATOR != '1', // X-Frame-Options - Disable in studio to enable preview iframe
+	frameguard: process.env.IS_GENERATOR !== "1",
 	contentSecurityPolicy: {
 		useDefaults: false,
 		directives: {
@@ -7,9 +7,9 @@ export default {
 				"'self'",
 				"'unsafe-eval'",
 				"'unsafe-inline'",
-				'data:',
-				'blob:'
-			]
-		}
-	}
-}
+				"data:",
+				"blob:",
+			],
+		},
+	},
+};

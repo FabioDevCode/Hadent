@@ -14,11 +14,29 @@ main {
     background-color: transparent !important;
 }
 
-/* .btn {
+/*
+.btn {
     border: none !important;
 }
-
 .btn-info {
     background-color: teal !important;
     border-color: teal !important;
-} */
+}
+*/
+
+
+html[data-theme="hadent"] * {
+    --bg-color: crimson;
+}
+
+html[data-theme="fabio"] * {
+    --bg-color: cornflowerblue;
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.card {
+ position: unset !important;
+}

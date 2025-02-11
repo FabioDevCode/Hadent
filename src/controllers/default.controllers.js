@@ -1,12 +1,12 @@
 export const index = (req, res) => {
 	res.render("index", {
-		layout: false
+		layout: false,
 	});
 };
 
 export const login = (req, res) => {
 	res.render("login", {
-		layout: "_login"
+		layout: "_login",
 	});
 };
 

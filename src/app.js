@@ -1,18 +1,18 @@
 import * as path from "node:path";
 import consoleStamp from "console-stamp";
 import cookieParser from "cookie-parser";
-import helmet from "helmet";
 import cors from "cors";
 import dayjs from "dayjs";
 import timezone from "dayjs/plugin/timezone.js";
 import utc from "dayjs/plugin/utc.js";
 import express from "express";
+import helmet from "helmet";
 import i18n from "i18n";
 import morgan from "morgan";
 import split from "split";
 
-import routes from "./routes/index.js";
 import helmet_config from "../src/config/helmet.js";
+import routes from "./routes/index.js";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -74,18 +74,18 @@ consoleStamp(console, {
 import { sanitizeBody } from "./utils/security.js";
 
 app.use((req, res, next) => {
-    if (req.body) {
-        req.body = sanitizeBody(req.body);
-    }
-    if (req.query) {
-        req.query = sanitizeBody(req.query);
-    }
-    if (req.params) {
-        req.params = sanitizeBody(req.params);
-    }
-    next();
+	if (req.body) {
+		req.body = sanitizeBody(req.body);
+	}
+	if (req.query) {
+		req.query = sanitizeBody(req.query);
+	}
+	if (req.params) {
+		req.params = sanitizeBody(req.params);
+	}
+	next();
 });
-app.disable('x-powered-by');
+app.disable("x-powered-by");
 app.use(helmet(helmet_config));
 app.use(cors());
 app.use(cookieParser());
