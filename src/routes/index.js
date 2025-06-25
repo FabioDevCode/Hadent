@@ -11,9 +11,7 @@ export default async (app) => {
 	for (const file of fs.readdirSync(__dirname)) {
 		if (!excluded_files.includes(file)) {
 			const routeConfig = routeConfigurations[file];
-			const routePath = routeConfig
-				? routeConfig.path
-				: `/${file.split(".")[0]}`;
+			const routePath = routeConfig ? routeConfig.path : `/${file.split(".")[0]}`;
 			const middlewares = routeConfig ? routeConfig.middlewares : [];
 			const filePath = path.join(__dirname, file);
 
@@ -22,10 +20,18 @@ export default async (app) => {
 				const routes = module.default;
 
 				if (routes) {
+					const setEntityMiddleware = (req, res, next) => {
+						const entity = routePath.replace(/^\//, "");
+						const Entity = entity.charAt(0).toUpperCase() + entity.slice(1);
+						req.entity = entity;
+						req.Entity = Entity;
+						next();
+					};
+
 					if (middlewares.length > 0) {
-						app.use(routePath, ...middlewares, routes);
+						app.use(routePath, setEntityMiddleware, ...middlewares, routes);
 					} else {
-						app.use(routePath, routes);
+						app.use(routePath, setEntityMiddleware, routes);
 					}
 				} else {
 					console.error(
