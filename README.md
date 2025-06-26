@@ -1,6 +1,6 @@
 <div align="center" style="display: flex">
     <br>
-    <img height="180px" src="./data/hadent_logo.png" alt="Hadent Logo" />
+    <img height="180px" src="./ressources/hadent_logo.png" alt="Hadent Logo" />
 </div>
 
 <h3 align="center">Hadent</h3>
