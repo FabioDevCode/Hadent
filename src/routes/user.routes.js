@@ -1,20 +1,17 @@
 import express from "express";
 const router = express.Router();
-import * as ctl from "../controllers/user.controllers.js";
-
-"../_core/controllers/coreEntityController.js"
-
+import wrapAsync from '../_core/utils/wrapAsync.js';
+import coreEntityController from "../_core/controllers/coreEntityController.js";
 
 
-// router.get("/create"); // formulaire de create
-// router.get("/update"); // formulaire d'update
-// router.get("/list"); // list de user
-
-// router.post("/create"); // ajax post create
-// router.post("/update"); // ajax post update
-
-
-
+router.get('/list', wrapAsync(coreEntityController.list));
+router.get('/datalist', wrapAsync(coreEntityController.datalist));
+router.get('/show/:id', wrapAsync(coreEntityController.show));
+router.get('/createForm', wrapAsync(coreEntityController.createForm));
+router.post('/create', wrapAsync(coreEntityController.create));
+router.get('/updateForm/:id', wrapAsync(coreEntityController.updateForm));
+router.post('/update/:id', wrapAsync(coreEntityController.update));
+router.post('/delete/:id', wrapAsync(coreEntityController.delete));
 
 
 export default router;
