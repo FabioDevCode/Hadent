@@ -1,18 +1,26 @@
 export default function errorHandler() {
-    console.error(`[${err.entity}] erreur sur ${err.method} ${err.route}`, err);
+    return (err, req, res, next) => {
+        const isAjax = req.xhr || req.headers.accept?.includes('application/json');
 
-    // Exemple : redirection spécifique selon entité et route
-    if (err.entity === 'user' && err.route?.includes('/create')) {
-        // Si tu utilises un système de flash messages (ex: connect-flash)
-        if (req.flash) req.flash('error', 'Erreur lors de la création utilisateur');
-        return res.redirect(`/${err.entity}/create`);
+        console.error(`[${err.entity || 'Unknown'}] erreur sur ${err.method || req.method} ${err.route || req.originalUrl}`, err);
+
+        // 1. Requête AJAX/FETCH → retourne JSON
+        if (isAjax) {
+            return res.status(err.statusCode || 500).json({
+                success: false,
+                message: err.message || 'Une erreur est survenue.',
+                entity: err.entity || null,
+                route: err.route || null,
+                // stack: process.env.NODE_ENV === 'development' ? err.stack : undefined,
+            });
+        }
+
+        // 2. Erreur générique (SSR)
+        res.status(err.statusCode || 500).render('error', {
+            message: err.message || 'Une erreur est survenue',
+            // error: process.env.NODE_ENV === 'development' ? err : {},
+            entity: err.entity || null,
+            route: err.route || null,
+        });
     }
-
-    // Gestion d'erreur générique : rendu d'une page d'erreur
-    res.status(err.statusCode || 500).render('error', {
-        message: err.message || 'Une erreur est survenue',
-        error: err,
-        entity: err.entity,
-        route: err.route
-    });
 };
