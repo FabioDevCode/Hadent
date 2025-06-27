@@ -20,7 +20,7 @@ Ce projet est actuellement en phase de recherche et développement afin de crée
 
 <div align="left" style="display: inline-block">
     <img src="https://img.shields.io/badge/Handlebars-F0772B?style=for-the-badge&logo=Handlebars.js&logoColor=maroon"/>
-    <img src="https://img.shields.io/badge/alpinejs-white.svg?style=for-the-badge&logo=alpinedotjs&logoColor=%238BC0D0"/>
+    <img src="https://img.shields.io/badge/alpine.js-white.svg?style=for-the-badge&logo=alpinedotjs&logoColor=%238BC0D0"/>
     <img src="https://img.shields.io/badge/daisyui-202020?style=for-the-badge&logo=daisyui&logoColor=FFCE2A"/>
     <img src="https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB"/>
     <img src="https://img.shields.io/badge/Node.JS-43853D?style=for-the-badge&logo=node.js&logoColor=white"/>
