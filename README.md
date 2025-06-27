@@ -4,7 +4,7 @@
 </div>
 
 <h3 align="center">Hadent</h3>
-<p align="center">Boilerplate SSR - Bientôt générateur d'applications</p>
+<p align="center">Boilerplate SSR & Bientôt un générateur d'applications</p>
 
 <div align="center" style="display: inline-block">
     <img src="https://img.shields.io/badge/license-MIT-C7191B?style=flat-square" alt="License MIT"/>
