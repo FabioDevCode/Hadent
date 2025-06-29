@@ -1,0 +1,10 @@
+.hdt_dropdown-menu {
+    justify-content: space-between;
+    padding: 0 16px;
+}
+
+.hdt_avatar-btn {
+    i {
+        font-size: 16px;
+    }
+}

@@ -1,7 +1,7 @@
 import fs from "node:fs";
+import { createRequire } from "node:module";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { createRequire } from "node:module";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -49,12 +49,7 @@ export default async (app) => {
 				next();
 			};
 
-			app.use(
-				routePath,
-				setEntityMiddleware,
-				setLayoutForEntity,
-				routes
-			);
+			app.use(routePath, setEntityMiddleware, setLayoutForEntity, routes);
 		} catch (err) {
 			console.error(`Erreur en important les routes de ${entity} → ${err.message}`);
 		}

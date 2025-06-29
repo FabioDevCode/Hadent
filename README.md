@@ -27,6 +27,14 @@ Ce projet est actuellement en phase de recherche et développement afin de crée
     <img src="https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
 </div>
 
+## Documentation
+
+Handlebars.js: [https://handlebarsjs.com/guide/](https://handlebarsjs.com/guide/)<br>
+Alpine.js : [https://alpinejs.dev/](https://alpinejs.dev)<br>
+DaisyUI : [https://v4.daisyui.com/](https://v4.daisyui.com/)<br>
+Font Awesome: [https://fontawesome.com/v5/search?ic=free](https://fontawesome.com/v5/search?ic=free)<br>
+TailwindCSS: [https://tailwindcss.com/docs/columns](https://tailwindcss.com/docs/columns)<br>
+
 ##
 
 <img src="https://badgen.net/badge/Fait%20par/Fabio%20R.%20LOPES/438f98" />

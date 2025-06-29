@@ -12,8 +12,8 @@ import morgan from "morgan";
 import split from "split";
 
 import helmet_config from "../src/config/helmet.js";
-import routes from "./routes/index.js";
 import errorHandler from "./_core/middlewares/errorHandler.js";
+import routes from "./routes/index.js";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -47,9 +47,7 @@ const morgan_config = {
 		}
 	},
 	stream: split().on("data", (line) => {
-		process.stdout.write(
-			`[${dayjs().tz("Europe/Paris").format("YYYY-MM-DD HH:mm:ss-SSS")}] ${line} \n`,
-		);
+		process.stdout.write(`[${dayjs().tz("Europe/Paris").format("YYYY-MM-DD HH:mm:ss-SSS")}] ${line} \n`);
 	}),
 };
 
@@ -63,14 +61,15 @@ consoleStamp(console, {
 });
 
 import models from "./models/index.js";
+
 await models.sequelize
-.sync()
-.then(() => {
-    console.log("Database & tables updated !");
-})
-.catch((err) => {
-    console.error("Error sync database:", err);
-});
+	.sync()
+	.then(() => {
+		console.log("Database & tables updated !");
+	})
+	.catch((err) => {
+		console.error("Error sync database:", err);
+	});
 
 import { sanitizeBody } from "./utils/security.js";
 
@@ -86,6 +85,7 @@ app.use((req, res, next) => {
 	}
 	next();
 });
+
 app.disable("x-powered-by");
 app.use(helmet(helmet_config));
 app.use(cors());
@@ -95,38 +95,40 @@ app.use(express.static(`${__dirname}/public`));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-import database from "./config/database.js";
+import MySQLStoreConstructor from "express-mysql-session";
 import session from "express-session";
-import MySQLStoreConstructor from 'express-mysql-session';
+import database from "./config/database.js";
 const MySQLStore = MySQLStoreConstructor(session);
 
 const sessionStore = new MySQLStore(database);
 
-app.use(session({
-	name: "hadent",
-	secret: "example_secret",
-	store: sessionStore,
-	resave: false,
-	saveUninitialized: false,
-	cookie: {
-		secure: process.env.NODE_ENV === 'production', // true if https (HTTPS requis)
-		httpOnly: true,
-		maxAge: 24 * 60 * 60 * 1000, // 1 jour
-		sameSite: 'lax',
-	},
-	rolling: false,
-	unset: 'destroy'
-}))
+app.use(
+	session({
+		name: "hadent",
+		secret: "example_secret",
+		store: sessionStore,
+		resave: false,
+		saveUninitialized: false,
+		cookie: {
+			secure: process.env.NODE_ENV === "production", // true if https (HTTPS requis)
+			httpOnly: true,
+			maxAge: 24 * 60 * 60 * 1000, // 1 jour
+			sameSite: "lax",
+		},
+		rolling: false,
+		unset: "destroy",
+	}),
+);
 
 import { create } from "express-handlebars";
 import hbs_fn from "./helpers/hbs_fn.js";
 
 const hbs = create({
-	defaultLayout: "main", // layout or false
-	layoutsDir: `${__dirname}/views/layouts`, // layout folder name
-	partialsDir: `${__dirname}/views/partials`, // partials folder name
+	defaultLayout: "main",
+	layoutsDir: `${__dirname}/views/layouts`,
+	partialsDir: `${__dirname}/views/partials`,
 	extname: ".hbs",
-	helpers: hbs_fn, // handlebars helpers
+	helpers: hbs_fn,
 });
 
 app.engine("hbs", hbs.engine);

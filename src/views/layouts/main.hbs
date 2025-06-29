@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light">
+<html lang="fr" data-theme="fantasy">
 <head>
     {{> head}}
 </head>
@@ -7,23 +7,31 @@
     <div class="drawer lg:drawer-open">
         <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
         <div class="drawer-content flex flex-col items-center justify-start">
-            <div class="navbar bg-base-100 w-full sticky">
+            <div class="navbar bg-base-100 w-full sticky gap-2">
                 <div class="flex-none lg:hidden">
                     <label for="my-drawer-2" aria-label="open sidebar" class="btn btn-noover">
                         <i class="fas fa-bars"></i>
                     </label>
                 </div>
-                <div class="mx-2 flex-1 px-2">
-                    <div class="badge badge-outline">Beta</div>
+                <div class="mx-2 flex-1 px-2 gap-4">
+                    {{!-- <div class="badge badge-outline">Beta</div> --}}
+                    <div class="breadcrumbs text-sm">
+                        <ul>
+                            <li><a>Home</a></li>
+                            <li><a>Documents</a></li>
+                            <li>Add Document</li>
+                        </ul>
+                    </div>
                 </div>
+
+                <div class="badge badge-outline">Beta</div>
                 <div class="flex items-center lg:block">
                     <div class="dropdown dropdown-end">
-                        <div tabindex="0" role="button" class="avatar">
-                            <div class="w-10 rounded mt-1.5 mr-1.5">
-                                <img src="/img/user-icon.jpg" alt="user icon" />
-                            </div>
+                        <div tabindex="0" role="button" class="hdt_avatar-btn btn btn-ghost">
+                            <i class="fas fa-user"></i>
                         </div>
-                        <ul tabindex="0" class="dropdown-content menu bg-base-300 rounded-box w-52 p-2 shadow relative">
+
+                        <ul tabindex="0" class="dropdown-content menu bg-base-200 rounded-box w-52 mt-2 p-2 shadow relative">
                             <li>
                                 <a>
                                     <i class="fas fa-sign-out-alt"></i>
@@ -48,35 +56,38 @@
                 </div>
 
                 <ul class="menu bg-base-100 text-base-content min-h-full p-0">
+                    {{!-- <li class="menu-title">
+                        Module
+                    </li> --}}
+
+                    <div class="dropdown dropdown-hover">
+                        <div tabindex="0" role="button" class="hdt_dropdown-menu btn btn-outline btn-block">
+                            Main
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <ul tabindex="0" class="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 w-full shadow">
+                            <li><a href="/home">
+                                Main
+                            </a></li>
+                            <li><a href="/module/administration">
+                                Administration
+                            </a></li>
+                        </ul>
+                    </div>
+
+                    <div class="divider"></div>
+
                     <li class="menu-title">
                         Main
                     </li>
                     <li>
                         <a>
-                            <i class="fas fa-layer-group"></i>
-                            exemple 1
+                            <i class="fas fa-folder"></i>
+                            Dossier
                         </a>
                     </li>
                     <li><a>Item 2</a></li>
                     <li><a>Item 3</a></li>
-                </ul>
-
-                <div class="divider"></div>
-
-                <ul class="menu bg-base-100 text-base-content min-h-full p-0">
-                    <li>
-                        <details close="">
-                            <summary>Module</summary>
-                            <ul>
-                                <li>
-                                    <a href="/module/administration">
-                                        <i class="fas fa-tools"></i>
-                                        Administration
-                                    </a>
-                                </li>
-                            </ul>
-                        </details>
-                    </li>
                 </ul>
 
             </div>

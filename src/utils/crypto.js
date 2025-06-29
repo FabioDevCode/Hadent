@@ -4,9 +4,7 @@ import { KEY_ONE, KEY_TWO } from "../config/keys.json" assert { type: "json" };
 class Crypt {
 	encryptObject(object) {
 		const data = JSON.stringify(object);
-		return Buffer.from(
-			CryptoJS.AES.encrypt(data, KEY_ONE, { iv: KEY_TWO }).toString(),
-		).toString("Hex");
+		return Buffer.from(CryptoJS.AES.encrypt(data, KEY_ONE, { iv: KEY_TWO }).toString()).toString("Hex");
 	}
 
 	decryptObject(object) {
@@ -20,9 +18,7 @@ class Crypt {
 	}
 
 	decryptString(string) {
-		return CryptoJS.AES.decrypt(string, KEY_ONE, { iv: KEY_TWO }).toString(
-			CryptoJS.enc.Utf8,
-		);
+		return CryptoJS.AES.decrypt(string, KEY_ONE, { iv: KEY_TWO }).toString(CryptoJS.enc.Utf8);
 	}
 }
 
