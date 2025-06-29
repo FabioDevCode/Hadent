@@ -6,7 +6,7 @@ export const index = (req, res) => {
 
 export const login = (req, res) => {
 	res.render("login", {
-		layout: "_login",
+		layout: "login",
 	});
 };
 

@@ -1,4 +1,5 @@
-import entities from "../../config/entities.js";
+import { createRequire } from "node:module";
+const entities = createRequire(import.meta.url)("../../config/entities.json");
 
 export default function setLayoutForEntity(req, res, next) {
     const entity = req.entity;

@@ -1,15 +1,15 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import { createRequire } from "node:module";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import entities  from "../config/entities.js";
 import setLayoutForEntity from "../_core/middlewares/setLayoutForEntity.js";
-import prefixOverrides from "./_prefixRoutesConfig.js";
-
-// Liste des fichiers de routes custom
+const prefixOverrides = createRequire(import.meta.url)("./_prefixRoutesConfig.json");
+const entities = createRequire(import.meta.url)("../config/entities.json");
 const customRoutesFiles = fs.readdirSync(__dirname);
+
 const routeFileExists = (entity) => customRoutesFiles.includes(`${entity}.routes.js`);
 
 export default async (app) => {
