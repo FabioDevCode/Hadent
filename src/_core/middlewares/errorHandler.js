@@ -11,14 +11,13 @@ export default function errorHandler() {
                 message: err.message || 'Une erreur est survenue.',
                 entity: err.entity || null,
                 route: err.route || null,
-                // stack: process.env.NODE_ENV === 'development' ? err.stack : undefined,
             });
         }
 
         // 2. Erreur générique (SSR)
         res.status(err.statusCode || 500).render('error', {
+            layout: false,
             message: err.message || 'Une erreur est survenue',
-            // error: process.env.NODE_ENV === 'development' ? err : {},
             entity: err.entity || null,
             route: err.route || null,
         });

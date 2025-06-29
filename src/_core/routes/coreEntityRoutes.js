@@ -1,7 +1,7 @@
 import express from "express";
 const router = express.Router();
-import wrapAsync from '../_core/utils/wrapAsync.js';
-import coreEntityController from "../_core/controllers/coreEntityController.js";
+import wrapAsync from '../utils/wrapAsync.js';
+import coreEntityController from "../controllers/coreEntityController.js";
 
 
 router.get('/list', wrapAsync(coreEntityController.list));

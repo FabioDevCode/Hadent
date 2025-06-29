@@ -1,8 +1,8 @@
+import { createRequire } from "node:module";
 import * as builder from "../helpers/models_hlps.js";
-import attributes from "./attributes/user.attributes.json" assert {
-	type: "json",
-};
-import relations from "./relations/user.relations.json" assert { type: "json" };
+const attributes = createRequire(import.meta.url)("./attributes/user.attributes.json");
+const relations = createRequire(import.meta.url)("./relations/user.relations.json");
+
 
 export default function (sequelize) {
 	const attributes_build = builder.buildAttributes(attributes);

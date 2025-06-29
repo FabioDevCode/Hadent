@@ -122,7 +122,7 @@ import { create } from "express-handlebars";
 import hbs_fn from "./helpers/hbs_fn.js";
 
 const hbs = create({
-	defaultLayout: "_main", // layout or false
+	defaultLayout: "main", // layout or false
 	layoutsDir: `${__dirname}/views/layouts`, // layout folder name
 	partialsDir: `${__dirname}/views/partials`, // partials folder name
 	extname: ".hbs",
@@ -135,7 +135,6 @@ app.set("views", [`${__dirname}/views/pages`]);
 app.use("/public", express.static(path.join(__dirname, "public")));
 
 await routes(app);
-
 app.use(errorHandler);
 
 export default app;
