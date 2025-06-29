@@ -1,5 +1,6 @@
 {
 	"default": "main",
 	"module": "main",
-	"user": "aadministration"
+	"user": "administration",
+	"dossier": "main"
 }

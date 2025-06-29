@@ -1,0 +1,51 @@
+{
+    "id": {
+        "type": "INTEGER",
+        "autoIncrement": true,
+        "allowNull": false,
+        "primaryKey": true
+    },
+    "titre": {
+        "type": "STRING(100)",
+        "allowNull": false
+    },
+    "description": {
+        "type": "TEXT",
+        "allowNull": true
+    },
+    "date_creation": {
+        "type": "DATEONLY",
+        "allowNull": false
+    },
+    "heure_rdv": {
+        "type": "TIME",
+        "allowNull": true
+    },
+    "date_rappel": {
+        "type": "DATE",
+        "allowNull": true
+    },
+    "statut": {
+        "type": "ENUM",
+        "values": [
+            "en_cours",
+            "termine",
+            "archive"
+        ],
+        "allowNull": false,
+        "defaultValue": "en_cours"
+    },
+    "est_confidentiel": {
+        "type": "BOOLEAN",
+        "allowNull": false,
+        "defaultValue": false
+    },
+    "email_contact": {
+        "type": "STRING",
+        "allowNull": true
+    },
+    "site_web": {
+        "type": "STRING",
+        "allowNull": true
+    }
+}

@@ -15,7 +15,8 @@ import * as ctl from "../controllers/module.controllers.js";
 // router.post('/delete/:id', wrapAsync(coreEntityController.delete));
 
 
-
+router.get("/main", ctl.main);
 router.get("/administration", ctl.administration);
+
 
 export default router;

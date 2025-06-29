@@ -3,3 +3,7 @@ export const administration = (req, res) => {
 		layout: "administration",
 	});
 };
+
+export const main = (req, res) => {
+	
+}

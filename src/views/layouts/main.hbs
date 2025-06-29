@@ -13,13 +13,15 @@
                         <i class="fas fa-bars"></i>
                     </label>
                 </div>
+
                 <div class="mx-2 flex-1 px-2 gap-4">
-                    {{!-- <div class="badge badge-outline">Beta</div> --}}
                     <div class="breadcrumbs text-sm">
                         <ul>
-                            <li><a>Home</a></li>
-                            <li><a>Documents</a></li>
-                            <li>Add Document</li>
+                            <li>
+                                <a>
+                                    <p>{{__ module}}</p>
+                                </a>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -43,7 +45,6 @@
                 </div>
             </div>
             <main class="w-full px-4 flex flex-wrap gap-4 bg-base-100">
-                {{!-- BODY --}}
                 {{{body}}}
             </main>
         </div>
@@ -56,10 +57,6 @@
                 </div>
 
                 <ul class="menu bg-base-100 text-base-content min-h-full p-0">
-                    {{!-- <li class="menu-title">
-                        Module
-                    </li> --}}
-
                     <div class="dropdown dropdown-hover">
                         <div tabindex="0" role="button" class="hdt_dropdown-menu btn btn-outline btn-block">
                             Main
@@ -81,15 +78,31 @@
                         Main
                     </li>
                     <li>
+                        <details close="">
+                            <summary>
+                                <i class="fas fa-folder"></i>
+                                Dossier
+                            </summary>
+                            <ul>
+                                <li>
+                                    <a href="/dossier/createForm">
+                                        Créer
+                                    </a>
+                                </li>
+                                <li><a>Lister</a></li>
+                            </ul>
+                        </details>
+                    </li>
+
+                    {{!-- <li>
                         <a>
                             <i class="fas fa-folder"></i>
                             Dossier
                         </a>
-                    </li>
+                    </li> --}}
                     <li><a>Item 2</a></li>
                     <li><a>Item 3</a></li>
                 </ul>
-
             </div>
         </div>
     </div>
