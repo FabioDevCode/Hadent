@@ -1,5 +1,5 @@
 const devtoolsBtn = document.createElement('button');
-devtoolsBtn.textContent = 'DevTools';
+devtoolsBtn.innerHTML = '<i class="fas fa-wrench"></i>';
 Object.assign(devtoolsBtn.style, {
 	position: 'fixed',
 	bottom: '20px',
@@ -19,9 +19,9 @@ Object.assign(menu.style, {
 	bottom: '74px',
 	right: '20px',
 	backgroundColor: '#fff',
-	border: '1px solid #ccc',
 	borderRadius: '4px',
 	padding: '10px',
+	border: '1px solid #222',
 	boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
 	display: 'none',
 	zIndex: '9999',

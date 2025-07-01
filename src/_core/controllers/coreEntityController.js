@@ -20,7 +20,7 @@ export default {
 		const items = await models[req.Entity].findAll();
 	},
 	createForm: async (req, res, next) => {
-		res.render(`${req.entity}/create`);
+		res.render(`e_${req.entity}/create`);
 	},
 	create: async (req, res, next) => {
 		const item = await models[req.Entity].create(req.body);

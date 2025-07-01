@@ -7,5 +7,6 @@
 }
 
 .devtools_link:hover {
-    background-color: lightblue;
+    background-color: #222;
+    color: white;
 }
