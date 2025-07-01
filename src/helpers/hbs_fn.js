@@ -13,4 +13,11 @@ export default {
 		console.log(context);
 		return;
 	},
+	slot: function(name, options) {
+		if (!this._slots) this._slots = {};
+		this._slots[name] = options.fn(this);
+	},
+	renderSlot: function(name) {
+		return (this._slots?.[name]) || '';
+	}
 };
