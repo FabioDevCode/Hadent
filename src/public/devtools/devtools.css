@@ -1,0 +1,11 @@
+.devtools_link {
+    display: flex;
+    width: 100%;
+    padding: 4px 8px;
+    font-weight: 800;
+    border-radius: 4px;
+}
+
+.devtools_link:hover {
+    background-color: lightblue;
+}
