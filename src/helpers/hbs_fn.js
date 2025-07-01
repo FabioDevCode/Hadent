@@ -19,5 +19,15 @@ export default {
 	},
 	renderSlot: function(name) {
 		return (this._slots?.[name]) || '';
+	},
+	hasModuleAccess: (moduleName, options) => {
+		// hasModuleAccess - gestion droits d'accès aux modules
+	},
+	hasEntityAccess: (entityName, options) => {
+		// hasEntityAccess - gestion droits d'accès aux entités
+	},
+	can: (action, entityName, options) => {
+		// can - gestion des accès aux actions CRUD des entités
+		// action: create, update, read, delete
 	}
 };
