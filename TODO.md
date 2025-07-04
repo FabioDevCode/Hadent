@@ -7,3 +7,4 @@
 - [ ] Prévoir un helpers afin de controler la data pour le create et update etc...
 - [ ] Prévoir trad pour les modules
 - [ ] Intégrer **passeport** pour login user
+- [ ] Créer ne nouveau composants pour les formulaires

@@ -5,6 +5,12 @@ export default function setLayoutForEntity(req, res, next) {
 	const entity = req.entity;
 	const module = entities[entity];
 
+	if(entity && entity !== 'default') {
+		res.locals.entity = entity;
+	} else {
+		res.locals.entity = null;
+	}
+
 	if (module) {
 		res.locals.layout = module;
 		res.locals.module = module;

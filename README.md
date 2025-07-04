@@ -38,5 +38,5 @@ TailwindCSS: [https://tailwindcss.com/docs/columns](https://tailwindcss.com/docs
 ##
 
 <p align="center">
-    Fait par <b>Fabio R. LOPES</b>
+    fait par Fabio R. LOPES
 </p>

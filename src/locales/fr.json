@@ -1,3 +1,9 @@
 {
-    "main": "Accueil"
+	"module": {
+		"main": "Accueil"
+	},
+	"entity": {
+		"default": "",
+		"dossier": "Dossier"
+	}
 }

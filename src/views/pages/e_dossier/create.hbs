@@ -1,4 +1,80 @@
+{{!-- Action for breadcrumbs --}}
+{{#slot "action"}}
+    <li>
+        Créer
+    </li>
+{{/slot}}
 
-<h1>
-    Créer un Dossier
-</h1>
+<form
+    action=""
+    method="post"
+    class="grid grid-cols-12 gap-4 h-max w-full"
+>
+{{!-- DEBUT DU FORM --}}
+    {{> _ui/input
+        field="titre"
+        type="text"
+        required=true
+        col=8
+    }}
+
+    {{> _ui/input
+        field="date_creation"
+        label="Date de création"
+        type="date"
+        col=4
+    }}
+
+    {{> _ui/input
+        field="password"
+        label="Mot de passe"
+        type="password"
+        required=true
+        col=4
+    }}
+
+    {{> _ui/input
+        field="date_rappel"
+        label="Date de rappel"
+        type="datetime-local"
+    }}
+
+    {{> _ui/input
+        field="heure_rdv"
+        label="Heure du rendez-vous"
+        type="time"
+    }}
+
+    {{> _ui/input
+        field="month"
+        label="Mois"
+        type="month"
+        col=4
+    }}
+
+    {{> _ui/input
+        field="number"
+        label="Nombre"
+        type="number"
+        col=1
+    }}
+
+    {{> _ui/input
+        field="week"
+        label="Semaine"
+        type="week"
+        col=5
+    }}
+
+    {{!-- radio --}}
+    {{!-- enum --}}
+    {{!-- checkbox --}}
+    {{!-- file --}}
+    {{!-- range --}}
+    {{!-- select --}}
+
+
+
+
+{{!-- FIN DU FORM --}}
+</form>

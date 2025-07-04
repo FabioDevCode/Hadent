@@ -9,10 +9,22 @@ export default {
 		// biome-ignore lint/style/noArguments: <explanation>
 		return i18n.__n.apply(this, arguments);
 	},
+	_capitalize: (str) => {
+		if (typeof str !== "string") return "";
+		return str.charAt(0).toUpperCase() + str.slice(1);
+	},
+	_uppercase: (str) => {
+		typeof str === 'string' ? str.toUpperCase() : ''
+	},
+	_lowercase: (str) => {
+		typeof str === 'string' ? str.toLowerCase() : ''
+	},
+
 	log: (context) => {
 		console.log(context);
 		return;
 	},
+
 	slot: function(name, options) {
 		if (!this._slots) this._slots = {};
 		this._slots[name] = options.fn(this);
@@ -20,6 +32,15 @@ export default {
 	renderSlot: function(name) {
 		return (this._slots?.[name]) || '';
 	},
+
+	fallback: (a, b) => {
+		return (a !== undefined && a !== null && a !== '') ? a : b;
+	},
+	concat: (...args) => {
+		args.pop();
+		return args.join('');
+	},
+
 	hasModuleAccess: (moduleName, options) => {
 		// hasModuleAccess - gestion droits d'accès aux modules
 	},

@@ -1,0 +1,39 @@
+{{!--
+    name: Input
+    Parameters:
+        - field: STRING
+        - label: STRING
+        - type: STRING
+        - value: ANY
+        - required: BOOLEAN
+        - col: INTEGER
+        - class: STRING
+    How to use:
+        {{> _ui/input
+            field="titre"
+            label="Mon titre"
+            type="text"
+            value=""
+            required=true
+            col=4
+        }}
+--}}
+<label
+    data-field="{{field}}"
+    for="{{field}}"
+    class="form-control w-full h-max {{concat "col-span-" (fallback col 2)}} {{fallback class ''}}"
+>
+    <div class="label p-0 px-1 pb-1">
+        <span class="label-text text-lg font-semibold {{#if required}}required{{/if}}">
+            {{fallback label (_capitalize field)}}
+        </span>
+    </div>
+    <input
+        type="{{fallback type 'text'}}"
+        placeholder="{{fallback label (_capitalize field)}}"
+        name="{{field}}"
+        class="input input-bordered w-full"
+        value="{{fallback value ''}}"
+        {{#if required}}required="" aria-required="true"{{/if}}
+    />
+</label>

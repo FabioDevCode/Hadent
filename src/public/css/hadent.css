@@ -1,10 +1,13 @@
 .hdt_dropdown-menu {
     justify-content: space-between;
     padding: 0 16px;
+    border-color: #EBECED;
+    border-color: #AEB1B5;
+    color: #AEB1B5;
 }
 
-.hdt_avatar-btn {
-    i {
-        font-size: 16px;
-    }
+label.required::after,
+.label-text.required::after {
+    content: " *";
+    color: red;
 }
