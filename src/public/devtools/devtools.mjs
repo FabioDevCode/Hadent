@@ -31,6 +31,9 @@ Object.assign(menu.style, {
 menu.innerHTML = `
 	<ul style="list-style:none; margin:0; padding:0;">
 		<li>
+			<a class="devtools_link" href="https://handlebarsjs.com/guide/builtin-helpers.html#if" target="_blank">Handlebars.js</a>
+		</li>
+		<li>
 			<a class="devtools_link" href="https://alpinejs.dev/" target="_blank">Alpine.js</a>
 		</li>
 		<li>
