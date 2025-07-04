@@ -41,6 +41,7 @@ const morgan_config = {
 			req.url.includes("/img") ||
 			req.url.includes("/js") ||
 			req.url.includes("/plugins") ||
+			req.url.includes("/devtools") ||
 			req.url.includes("/favicon.ico")
 		) {
 			return true;

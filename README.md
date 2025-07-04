@@ -37,4 +37,6 @@ TailwindCSS: [https://tailwindcss.com/docs/columns](https://tailwindcss.com/docs
 
 ##
 
-<img src="https://badgen.net/badge/Fait%20par/Fabio%20R.%20LOPES/438f98" />
+<p align="center">
+    Fait par <b>Fabio R. LOPES</b>
+</p>
