@@ -8,6 +8,10 @@
 	"files": {
 		"ignoreUnknown": false,
 		"ignore": [
+			"public/**/*.js",
+			"public/**/*.cjs",
+			"public/**/*.mjs",
+			"public/**/*.css",
 			"public/js/*.mjs",
 			"public/js/*.js",
 			"public/css/*.css",
@@ -28,7 +32,10 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true
+			"recommended": true,
+			"style": {
+				"noArguments": "off"
+			}
 		}
 	},
 	"javascript": {

@@ -1,12 +1,11 @@
 import i18n from "i18n";
+import dayjs from "dayjs";
 
 export default {
 	__: function () {
-		// biome-ignore lint/style/noArguments: <explanation>
 		return i18n.__.apply(this, arguments);
 	},
 	__n: function () {
-		// biome-ignore lint/style/noArguments: <explanation>
 		return i18n.__n.apply(this, arguments);
 	},
 	_capitalize: (str) => {
