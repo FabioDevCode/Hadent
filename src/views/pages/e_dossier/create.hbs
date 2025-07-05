@@ -73,8 +73,103 @@
     {{!-- range --}}
     {{!-- select --}}
 
+    <label
+        data-field="flatdate"
+        for="flatdate"
+        class="form-control w-full h-max col-span-4"
+    >
+        <div class="label p-0 px-1 pb-1">
+            <span class="label-text text-lg font-semibold">
+                Flatpickr Date
+            </span>
+        </div>
+        <input
+            type="text"
+            placeholder="JJ/MM/AAAA"
+            name="flatdate"
+            class="input input-bordered w-full flatpickr-date"
+        />
+    </label>
 
 
+    <label
+        data-field="flatdatetime"
+        for="flatdatetime"
+        class="form-control w-full h-max col-span-4"
+    >
+        <div class="label p-0 px-1 pb-1">
+            <span class="label-text text-lg font-semibold">
+                Flatpickr DateTime
+            </span>
+        </div>
+        <input
+            type="text"
+            placeholder="JJ/MM/AAAA hh:mm"
+            name="flatdatetime"
+            class="input input-bordered w-full flatpickr-datetime"
+        />
+    </label>
+
+    <label
+        data-field="flattime"
+        for="flattime"
+        class="form-control w-full h-max col-span-4"
+    >
+        <div class="label p-0 px-1 pb-1">
+            <span class="label-text text-lg font-semibold">
+                Flatpickr Time
+            </span>
+        </div>
+        <input
+            type="text"
+            placeholder="hh:mm"
+            name="flattime"
+            class="input input-bordered w-full flatpickr-timeonly"
+        />
+    </label>
+
+    <label
+        data-field="flatdate_bis"
+        for="flatdate_bis"
+        class="form-control w-full h-max col-span-4"
+    >
+        <div class="label p-0 px-1 pb-1">
+            <span class="label-text text-lg font-semibold">
+                Flatpickr Date Bis
+            </span>
+        </div>
+        <input
+            id="custom_date"
+            type="text"
+            placeholder="JJ/MM/AAAA"
+            name="flatdate_bis"
+            class="input input-bordered w-full flatpickr-date"
+        />
+    </label>
 
 {{!-- FIN DU FORM --}}
 </form>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        initFlatpickr()
+
+        const input = document.querySelector('#custom_date');
+        if (input._flatpickr) {
+            input._flatpickr.destroy();
+        };
+        flatpickr(input, {
+            dateFormat: "d/m/Y",
+            locale: "fr",
+            disableMobile: true,
+            disable: [
+                function (date) {
+                    // Renvoie true pour les samedis (6) et dimanches (0)
+                    return (date.getDay() === 0 || date.getDay() === 6);
+                },
+                // désactive les Lundi
+                (date) => date.getDay() === 1
+            ]
+        });
+    });
+</script>

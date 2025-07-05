@@ -45,6 +45,9 @@ menu.innerHTML = `
 		<li>
 			<a class="devtools_link" href="https://v4.daisyui.com/" target="_blank" ">DaisyUI</a>
 		</li>
+		<li>
+			<a class="devtools_link" href="https://flatpickr.js.org/getting-started/" target="_blank" ">Flatpickr</a>
+		</li>
 	</ul>
 `;
 
