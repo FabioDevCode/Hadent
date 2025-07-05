@@ -127,7 +127,10 @@ import hbs_fn from "./helpers/hbs_fn.js";
 const hbs = create({
 	defaultLayout: "main",
 	layoutsDir: `${__dirname}/views/layouts`,
-	partialsDir: `${__dirname}/views/components`,
+	partialsDir: [
+		`${__dirname}/views/components`,
+		`${__dirname}/views/partials`,
+	],
 	extname: ".hbs",
 	helpers: hbs_fn,
 });
