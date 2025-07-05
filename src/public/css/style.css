@@ -4,6 +4,7 @@
 
 body, html {
     overscroll-behavior: none;
+    min-width: 320px;
 }
 
 main {
@@ -11,12 +12,3 @@ main {
     height: 100%
 }
 
-.btn-noover,
-.btn-noover:hover {
-    border-color: transparent !important;
-    background-color: transparent !important;
-}
-
-.card {
-    position: unset !important;
-}

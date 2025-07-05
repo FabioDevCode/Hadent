@@ -5,201 +5,182 @@
     </li>
 {{/slot}}
 
-<form
-    action=""
-    method="post"
-    class="grid grid-cols-12 gap-4 h-max w-full"
->
-{{!-- DEBUT DU FORM --}}
-    {{> _ui/input
-        field="titre"
-        type="text"
-        required=true
-        col=12
-    }}
+<div class="flex flex-col gap-4 w-full">
+    <h1 class="hdt-title">
+        {{_capitalize entity}}
+    </h1>
 
-    <label
-        data-field="email"
-        for="email"
-        class="form-control w-full h-max col-span-4"
+    <form
+        action=""
+        method="post"
+        class="grid col-span-12 grid-cols-12 gap-4 h-max w-full"
     >
-        <div class="label p-0 px-1 pb-1">
-            <span class="label-text text-lg font-semibold">
-                Email inputmask
-            </span>
-        </div>
-        <input
+
+    {{!-- DEBUT DU FORM --}}
+        {{> _ui/input
+            field="titre"
             type="text"
-            placeholder="_@_._"
-            name="email"
-            data-mask="email"
-            class="input input-bordered w-full"
-        />
-    </label>
+            required=true
+            col=12
+        }}
 
-    <label
-        data-field="telephone"
-        for="telephone"
-        class="form-control w-full h-max col-span-4"
-    >
-        <div class="label p-0 px-1 pb-1">
-            <span class="label-text text-lg font-semibold">
-                Téléphone inputmask
-            </span>
+        <label
+            data-field="email"
+            for="email"
+            class="form-control w-full h-max col-span-12 md:col-span-4"
+        >
+            <div class="label p-0 px-1 pb-1">
+                <span class="label-text text-sm font-semibold">
+                    Email inputmask
+                </span>
+            </div>
+            <input
+                type="text"
+                placeholder="_@_._"
+                value="fabio.ramos-lopes@newmips.com"
+                name="email"
+                data-mask="email"
+                class="input input-bordered input-hdt w-full"
+            />
+        </label>
+
+        <label
+            data-field="telephone"
+            for="telephone"
+            class="form-control w-full h-max col-span-12 md:col-span-4"
+        >
+            <div class="label p-0 px-1 pb-1">
+                <span class="label-text text-sm font-semibold">
+                    Téléphone inputmask
+                </span>
+            </div>
+            <input
+                type="text"
+                placeholder="__ __ __ __ __"
+                value="0677384849"
+                name="telephone"
+                data-mask="phone"
+                class="input input-bordered input-hdt w-full"
+            />
+        </label>
+
+        {{> _ui/input
+            field="password"
+            label="Mot de passe"
+            type="password"
+            required=true
+            col=4
+        }}
+
+        {{> _ui/input
+            field="number"
+            label="Nombre"
+            type="number"
+            col=4
+        }}
+
+        <label
+            data-field="flatdate"
+            for="flatdate"
+            class="form-control w-full h-max col-span-12 md:col-span-4"
+        >
+            <div class="label p-0 px-1 pb-1">
+                <span class="label-text text-sm font-semibold">
+                    Flatpickr Date
+                </span>
+            </div>
+            <input
+                type="text"
+                placeholder="jj/mm/aaaa"
+                name="flatdate"
+                class="input input-bordered input-hdt w-full flatpickr-date"
+            />
+        </label>
+
+        <label
+            data-field="monthyear"
+            for="monthyear"
+            class="form-control w-full h-max col-span-12 md:col-span-4"
+        >
+            <div class="label p-0 px-1 pb-1">
+                <span class="label-text text-sm font-semibold">
+                    Flatpickr Month Year
+                </span>
+            </div>
+            <input
+                type="text"
+                placeholder="--------- ----"
+                name="monthyear"
+                class="input input-bordered input-hdt w-full flatpickr-monthyear"
+            />
+        </label>
+
+        <label
+            data-field="flatdatetime"
+            for="flatdatetime"
+            class="form-control w-full h-max col-span-12 md:col-span-4"
+        >
+            <div class="label p-0 px-1 pb-1">
+                <span class="label-text text-sm font-semibold">
+                    Flatpickr DateTime
+                </span>
+            </div>
+            <input
+                type="text"
+                placeholder="jj/mm/aaaa hh:mm"
+                name="flatdatetime"
+                class="input input-bordered input-hdt w-full flatpickr-datetime"
+            />
+        </label>
+
+        <label
+            data-field="flattime"
+            for="flattime"
+            class="form-control w-full h-max col-span-12 md:col-span-4"
+        >
+            <div class="label p-0 px-1 pb-1">
+                <span class="label-text text-sm font-semibold">
+                    Flatpickr Time
+                </span>
+            </div>
+            <input
+                type="text"
+                placeholder="hh:mm"
+                name="flattime"
+                class="input input-bordered input-hdt w-full flatpickr-timeonly"
+            />
+        </label>
+
+        <label
+            data-field="flatdate_bis"
+            for="flatdate_bis"
+            class="form-control w-full h-max col-span-12 md:col-span-4"
+        >
+            <div class="label p-0 px-1 pb-1">
+                <span class="label-text text-sm font-semibold">
+                    Flatpickr Date (Custom)
+                </span>
+            </div>
+            <input
+                id="custom_date"
+                type="text"
+                placeholder="jj/mm/aaaa custom"
+                name="flatdate_bis"
+                class="input input-bordered input-hdt w-full flatpickr-date"
+            />
+        </label>
+
+        <div class="col-span-12">
+            <button class="btn btn-hdt btn-info">
+                <i class="fas fa-plus"></i>
+                Taille custom md
+            </button>
         </div>
-        <input
-            type="text"
-            placeholder="__ __ __ __ __"
-            name="telephone"
-            data-mask="phone"
-            class="input input-bordered w-full"
-        />
-    </label>
 
+    {{!-- FIN DU FORM --}}
+    </form>
 
-
-    {{!-- {{> _ui/input
-        field="date_creation"
-        label="Date de création"
-        type="date"
-        col=4
-    }} --}}
-
-    {{> _ui/input
-        field="password"
-        label="Mot de passe"
-        type="password"
-        required=true
-        col=4
-    }}
-
-    {{!-- {{> _ui/input
-        field="date_rappel"
-        label="Date de rappel"
-        type="datetime-local"
-    }} --}}
-
-    {{!-- {{> _ui/input
-        field="heure_rdv"
-        label="Heure du rendez-vous"
-        type="time"
-    }} --}}
-
-    {{> _ui/input
-        field="number"
-        label="Nombre"
-        type="number"
-        col=4
-    }}
-
-    {{!-- {{> _ui/input
-        field="month"
-        label="Mois"
-        type="month"
-        col=4
-    }} --}}
-
-    {{!-- {{> _ui/input
-        field="week"
-        label="Semaine"
-        type="week"
-        col=4
-    }} --}}
-
-    <label
-        data-field="flatdate"
-        for="flatdate"
-        class="form-control w-full h-max col-span-4"
-    >
-        <div class="label p-0 px-1 pb-1">
-            <span class="label-text text-lg font-semibold">
-                Flatpickr Date
-            </span>
-        </div>
-        <input
-            type="text"
-            placeholder="jj/mm/aaaa"
-            name="flatdate"
-            class="input input-bordered w-full flatpickr-date"
-        />
-    </label>
-
-
-    <label
-        data-field="monthyear"
-        for="monthyear"
-        class="form-control w-full h-max col-span-4"
-    >
-        <div class="label p-0 px-1 pb-1">
-            <span class="label-text text-lg font-semibold">
-                Flatpickr Month Year
-            </span>
-        </div>
-        <input
-            type="text"
-            placeholder="--------- ----"
-            name="monthyear"
-            class="input input-bordered w-full flatpickr-monthyear"
-        />
-    </label>
-
-    <label
-        data-field="flatdatetime"
-        for="flatdatetime"
-        class="form-control w-full h-max col-span-4"
-    >
-        <div class="label p-0 px-1 pb-1">
-            <span class="label-text text-lg font-semibold">
-                Flatpickr DateTime
-            </span>
-        </div>
-        <input
-            type="text"
-            placeholder="jj/mm/aaaa hh:mm"
-            name="flatdatetime"
-            class="input input-bordered w-full flatpickr-datetime"
-        />
-    </label>
-
-    <label
-        data-field="flattime"
-        for="flattime"
-        class="form-control w-full h-max col-span-4"
-    >
-        <div class="label p-0 px-1 pb-1">
-            <span class="label-text text-lg font-semibold">
-                Flatpickr Time
-            </span>
-        </div>
-        <input
-            type="text"
-            placeholder="hh:mm"
-            name="flattime"
-            class="input input-bordered w-full flatpickr-timeonly"
-        />
-    </label>
-
-    <label
-        data-field="flatdate_bis"
-        for="flatdate_bis"
-        class="form-control w-full h-max col-span-4"
-    >
-        <div class="label p-0 px-1 pb-1">
-            <span class="label-text text-lg font-semibold">
-                Flatpickr Date (Custom)
-            </span>
-        </div>
-        <input
-            id="custom_date"
-            type="text"
-            placeholder="jj/mm/aaaa custom"
-            name="flatdate_bis"
-            class="input input-bordered w-full flatpickr-date"
-        />
-    </label>
-
-{{!-- FIN DU FORM --}}
-</form>
+</div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {

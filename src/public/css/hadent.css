@@ -1,8 +1,10 @@
+/*** DaisyUI *****************************/
 .hdt_dropdown-menu {
     justify-content: space-between;
     padding: 0 16px;
     border-color: #EBECED;
-    border-color: #AEB1B5;
+    border-color: transparent;
+    /* border-color: #AEB1B5; */
     color: #AEB1B5;
 }
 
@@ -12,7 +14,47 @@ label.required::after,
     color: red;
 }
 
+.hdt-title {
+    display: flex;
+    height: max-content;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
 
+.btn-noover,
+.btn-noover:hover {
+    border-color: transparent !important;
+    background-color: transparent !important;
+}
+
+.card {
+    position: unset !important;
+}
+
+.btn-hdt {
+    height: 2.5rem;
+    min-height: 2.5rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    font-size: 0.875rem;
+}
+
+.input-hdt {
+    height: 2.5rem;
+    min-height: 2.5rem;
+    padding-left: .75rem;
+    padding-right: .75rem;
+    font-size: 0.875rem;
+}
+
+.divider-hdt {
+    margin-top: 4px;
+    margin-bottom: 8px;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+/*** Flatpickr *****************************/
 div.flatpickr-innerContainer {
     display: flex;
     justify-content: center;
