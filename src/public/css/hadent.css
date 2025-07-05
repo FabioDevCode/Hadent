@@ -11,3 +11,45 @@ label.required::after,
     content: " *";
     color: red;
 }
+
+
+div.flatpickr-innerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+div.flatpickr-monthSelect-months {
+    padding: 16px 8px;
+    height: max-content;
+    display: grid;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, auto);
+    gap: 6px;
+}
+
+span.flatpickr-monthSelect-month {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 34px;
+    width: 64px;
+    border-radius: 100px;
+}
+
+span.flatpickr-monthSelect-month.today {
+    border: 1px solid #959EA9;
+}
+span.flatpickr-monthSelect-month.today:hover {
+    background-color: #959EA9;
+    color: white;
+}
+span.flatpickr-monthSelect-month.selected {
+    background-color: #569FF7;
+    color: white;
+}
+span.flatpickr-monthSelect-month:hover {
+    background-color: #E6E6E6;
+}

@@ -15,15 +15,55 @@
         field="titre"
         type="text"
         required=true
-        col=8
+        col=12
     }}
 
-    {{> _ui/input
+    <label
+        data-field="email"
+        for="email"
+        class="form-control w-full h-max col-span-4"
+    >
+        <div class="label p-0 px-1 pb-1">
+            <span class="label-text text-lg font-semibold">
+                Email inputmask
+            </span>
+        </div>
+        <input
+            type="text"
+            placeholder="_@_._"
+            name="email"
+            data-mask="email"
+            class="input input-bordered w-full"
+        />
+    </label>
+
+    <label
+        data-field="telephone"
+        for="telephone"
+        class="form-control w-full h-max col-span-4"
+    >
+        <div class="label p-0 px-1 pb-1">
+            <span class="label-text text-lg font-semibold">
+                Téléphone inputmask
+            </span>
+        </div>
+        <input
+            type="text"
+            placeholder="__ __ __ __ __"
+            name="telephone"
+            data-mask="phone"
+            class="input input-bordered w-full"
+        />
+    </label>
+
+
+
+    {{!-- {{> _ui/input
         field="date_creation"
         label="Date de création"
         type="date"
         col=4
-    }}
+    }} --}}
 
     {{> _ui/input
         field="password"
@@ -33,45 +73,38 @@
         col=4
     }}
 
-    {{> _ui/input
+    {{!-- {{> _ui/input
         field="date_rappel"
         label="Date de rappel"
         type="datetime-local"
-    }}
+    }} --}}
 
-    {{> _ui/input
+    {{!-- {{> _ui/input
         field="heure_rdv"
         label="Heure du rendez-vous"
         type="time"
-    }}
-
-    {{> _ui/input
-        field="month"
-        label="Mois"
-        type="month"
-        col=4
-    }}
+    }} --}}
 
     {{> _ui/input
         field="number"
         label="Nombre"
         type="number"
-        col=1
+        col=4
     }}
 
-    {{> _ui/input
+    {{!-- {{> _ui/input
+        field="month"
+        label="Mois"
+        type="month"
+        col=4
+    }} --}}
+
+    {{!-- {{> _ui/input
         field="week"
         label="Semaine"
         type="week"
-        col=5
-    }}
-
-    {{!-- radio --}}
-    {{!-- enum --}}
-    {{!-- checkbox --}}
-    {{!-- file --}}
-    {{!-- range --}}
-    {{!-- select --}}
+        col=4
+    }} --}}
 
     <label
         data-field="flatdate"
@@ -85,12 +118,30 @@
         </div>
         <input
             type="text"
-            placeholder="JJ/MM/AAAA"
+            placeholder="jj/mm/aaaa"
             name="flatdate"
             class="input input-bordered w-full flatpickr-date"
         />
     </label>
 
+
+    <label
+        data-field="monthyear"
+        for="monthyear"
+        class="form-control w-full h-max col-span-4"
+    >
+        <div class="label p-0 px-1 pb-1">
+            <span class="label-text text-lg font-semibold">
+                Flatpickr Month Year
+            </span>
+        </div>
+        <input
+            type="text"
+            placeholder="--------- ----"
+            name="monthyear"
+            class="input input-bordered w-full flatpickr-monthyear"
+        />
+    </label>
 
     <label
         data-field="flatdatetime"
@@ -104,7 +155,7 @@
         </div>
         <input
             type="text"
-            placeholder="JJ/MM/AAAA hh:mm"
+            placeholder="jj/mm/aaaa hh:mm"
             name="flatdatetime"
             class="input input-bordered w-full flatpickr-datetime"
         />
@@ -135,13 +186,13 @@
     >
         <div class="label p-0 px-1 pb-1">
             <span class="label-text text-lg font-semibold">
-                Flatpickr Date Bis
+                Flatpickr Date (Custom)
             </span>
         </div>
         <input
             id="custom_date"
             type="text"
-            placeholder="JJ/MM/AAAA"
+            placeholder="jj/mm/aaaa custom"
             name="flatdate_bis"
             class="input input-bordered w-full flatpickr-date"
         />
@@ -152,7 +203,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        initFlatpickr()
+        Hadent.initUI();
 
         const input = document.querySelector('#custom_date');
         if (input._flatpickr) {
