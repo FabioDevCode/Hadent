@@ -8,3 +8,5 @@
 - [ ] Prévoir trad pour les modules
 - [ ] Intégrer **passeport** pour login user
 - [ ] Créer ne nouveau composants pour les formulaires
+- [ ] Créer un helpers pour controler les champs reçu d'un formulaire
+- [ ] Intégrer Tom Select pour selecteur customisable routes /search
