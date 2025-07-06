@@ -11,16 +11,17 @@
     </h1>
 
     <form
-        action=""
+        action="/{{entity}}/create"
         method="post"
         class="grid col-span-12 grid-cols-12 gap-4 h-max w-full"
     >
+
+    <input type="hidden" name="timezone" id="timezone" />
 
     {{!-- DEBUT DU FORM --}}
         {{> _ui/input
             field="titre"
             type="text"
-            required=true
             col=12
         }}
 
@@ -68,7 +69,6 @@
             field="password"
             label="Mot de passe"
             type="password"
-            required=true
             col=4
         }}
 
@@ -93,7 +93,9 @@
                 type="text"
                 placeholder="jj/mm/aaaa"
                 name="flatdate"
+                value="15/06/1993"
                 class="input input-bordered input-hdt w-full flatpickr-date"
+                flatpickr="date"
             />
         </label>
 
@@ -110,8 +112,10 @@
             <input
                 type="text"
                 placeholder="--------- ----"
+                value="07/2025"
                 name="monthyear"
-                class="input input-bordered input-hdt w-full flatpickr-monthyear"
+                class="input input-bordered input-hdt w-full"
+                flatpickr="monthyear"
             />
         </label>
 
@@ -128,8 +132,10 @@
             <input
                 type="text"
                 placeholder="jj/mm/aaaa hh:mm"
+                value="20/08/2025 16:45"
                 name="flatdatetime"
                 class="input input-bordered input-hdt w-full flatpickr-datetime"
+                flatpickr="datetime"
             />
         </label>
 
@@ -146,8 +152,10 @@
             <input
                 type="text"
                 placeholder="hh:mm"
+                value="12:30"
                 name="flattime"
-                class="input input-bordered input-hdt w-full flatpickr-timeonly"
+                class="input input-bordered input-hdt w-full"
+                flatpickr="time"
             />
         </label>
 
@@ -166,14 +174,16 @@
                 type="text"
                 placeholder="jj/mm/aaaa custom"
                 name="flatdate_bis"
-                class="input input-bordered input-hdt w-full flatpickr-date"
+                value="15/07/2025"
+                class="input input-bordered input-hdt w-full"
+                flatpickr="date"
             />
         </label>
 
         <div class="col-span-12">
-            <button class="btn btn-hdt btn-info">
+            <button class="btn btn-hdt btn-success">
                 <i class="fas fa-plus"></i>
-                Taille custom md
+                Créer {{entity}}
             </button>
         </div>
 
@@ -184,6 +194,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById("timezone").value = Intl.DateTimeFormat().resolvedOptions().timeZone;
         Hadent.initUI();
 
         const input = document.querySelector('#custom_date');

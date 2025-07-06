@@ -1,14 +1,14 @@
 window.Hadent = window.Hadent || {};
 
 function initFlatpickr() {
-    document.querySelectorAll('input.flatpickr-date').forEach(function(input) {
+    document.querySelectorAll('input[flatpickr="date"]').forEach(function(input) {
         flatpickr(input, {
             dateFormat: "d/m/Y",
             locale: "fr",
             disableMobile: true
         });
     });
-    document.querySelectorAll('input.flatpickr-monthyear').forEach(function(input) {
+    document.querySelectorAll('input[flatpickr="monthyear"]').forEach(function(input) {
         flatpickr(input, {
             locale: "fr",
             disableMobile: true,
@@ -18,12 +18,13 @@ function initFlatpickr() {
             plugins: [
                 new monthSelectPlugin({
                     shorthand: true,
+                    dateFormat: "m/Y",
                     theme: "light"
                 })
             ]
         });
     });
-    document.querySelectorAll('input.flatpickr-datetime').forEach(function(input) {
+    document.querySelectorAll('input[flatpickr="datetime"]').forEach(function(input) {
         flatpickr(input, {
             enableTime: true,
             time_24hr: true,
@@ -32,11 +33,13 @@ function initFlatpickr() {
             disableMobile: true
         });
     });
-    document.querySelectorAll('input.flatpickr-timeonly').forEach(function(input) {
+    document.querySelectorAll('input[flatpickr="time"]').forEach(function(input) {
         flatpickr(input, {
             enableTime: true,
             noCalendar: true,
             dateFormat: "H:i",
+            // altInput: true,
+            // altFormat: "H\\hi",
             time_24hr: true,
             locale: "fr",
             disableMobile: true
@@ -76,7 +79,6 @@ function initInputmask() {
         }
     });
 }
-
 
 Hadent.defaultInitializers = {
     flatpickr: initFlatpickr,
