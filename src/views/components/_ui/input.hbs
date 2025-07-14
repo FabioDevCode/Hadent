@@ -8,6 +8,7 @@
         - required: BOOLEAN
         - col: INTEGER
         - class: STRING
+        - inputClass: STRING
     How to use:
         {{> _ui/input
             field="titre"
@@ -20,7 +21,6 @@
 --}}
 <label
     data-field="{{field}}"
-    for="{{field}}"
     class="form-control w-full h-max col-span-12 {{concat "md:col-span-" (fallback col 2)}} {{fallback class ''}}"
 >
     <div class="label p-0 px-1 pb-1">
@@ -32,7 +32,7 @@
         type="{{fallback type 'text'}}"
         placeholder="{{fallback label (_capitalize field)}}"
         name="{{field}}"
-        class="input input-bordered input-hdt w-full"
+        class="input input-bordered input-hdt w-full {{fallback inputClass}}"
         value="{{fallback value ''}}"
         {{#if required}}required="" aria-required="true"{{/if}}
     />

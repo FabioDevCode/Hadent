@@ -34,9 +34,9 @@ export default {
 	create: async (req, res, next) => {
 		const { flatdatetime, timezone: userTZ } = req.body;
 
-		console.log(req.body.flatdatetime);
-		console.log(req.body.timezone);
-		console.log("------------");
+		console.log("--------------------");
+		console.log(req.body);
+		console.log("--------------------");
 
 		const localDate = dayjs(flatdatetime, "DD/MM/YYYY HH:mm");
 

@@ -35,6 +35,7 @@ export default {
 	fallback: (a, b) => {
 		return (a !== undefined && a !== null && a !== '') ? a : b;
 	},
+
 	concat: (...args) => {
 		args.pop();
 		return args.join('');

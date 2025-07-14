@@ -95,3 +95,36 @@ span.flatpickr-monthSelect-month.selected {
 span.flatpickr-monthSelect-month:hover {
     background-color: #E6E6E6;
 }
+
+/*** Icon input *************************************/
+.input-icon-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.input-icon-wrapper input {
+    width: 100%;
+    padding-right: 2.2rem;
+}
+
+.input-icon {
+    cursor: initial;
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1rem;
+    pointer-events: none;
+}
+
+.input-icon-password {
+    cursor: pointer;
+    position: absolute;
+    right: 0.75rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1rem;
+}

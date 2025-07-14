@@ -27,7 +27,6 @@
 
         <label
             data-field="email"
-            for="email"
             class="form-control w-full h-max col-span-12 md:col-span-4"
         >
             <div class="label p-0 px-1 pb-1">
@@ -47,7 +46,6 @@
 
         <label
             data-field="telephone"
-            for="telephone"
             class="form-control w-full h-max col-span-12 md:col-span-4"
         >
             <div class="label p-0 px-1 pb-1">
@@ -69,6 +67,7 @@
             field="password"
             label="Mot de passe"
             type="password"
+            inputClass="with-icon"
             col=4
         }}
 
@@ -81,7 +80,6 @@
 
         <label
             data-field="flatdate"
-            for="flatdate"
             class="form-control w-full h-max col-span-12 md:col-span-4"
         >
             <div class="label p-0 px-1 pb-1">
@@ -101,12 +99,11 @@
 
         <label
             data-field="monthyear"
-            for="monthyear"
             class="form-control w-full h-max col-span-12 md:col-span-4"
         >
             <div class="label p-0 px-1 pb-1">
                 <span class="label-text text-sm font-semibold">
-                    Flatpickr Month Year
+                    Flatpickr Month Year test
                 </span>
             </div>
             <input
@@ -114,14 +111,13 @@
                 placeholder="--------- ----"
                 value="07/2025"
                 name="monthyear"
-                class="input input-bordered input-hdt w-full"
+                class="input input-bordered input-hdt w-full with-icon"
                 flatpickr="monthyear"
             />
         </label>
 
         <label
             data-field="flatdatetime"
-            for="flatdatetime"
             class="form-control w-full h-max col-span-12 md:col-span-4"
         >
             <div class="label p-0 px-1 pb-1">
@@ -141,7 +137,6 @@
 
         <label
             data-field="flattime"
-            for="flattime"
             class="form-control w-full h-max col-span-12 md:col-span-4"
         >
             <div class="label p-0 px-1 pb-1">
@@ -161,7 +156,6 @@
 
         <label
             data-field="flatdate_bis"
-            for="flatdate_bis"
             class="form-control w-full h-max col-span-12 md:col-span-4"
         >
             <div class="label p-0 px-1 pb-1">
@@ -182,7 +176,6 @@
 
         <label
             data-field="flatyear"
-            for="flatyear"
             class="form-control w-full h-max col-span-12 md:col-span-4"
         >
             <div class="label p-0 px-1 pb-1">
@@ -194,11 +187,51 @@
                 type="text"
                 placeholder="aaaa"
                 name="flatyear"
-                value=""
+                value="2025"
                 class="input input-bordered input-hdt w-full"
                 flatpickr="year"
             />
         </label>
+
+        <label
+            data-field="multiflat"
+            class="form-control w-full h-max col-span-12 md:col-span-4"
+        >
+            <div class="label p-0 px-1 pb-1">
+                <span class="label-text text-sm font-semibold">
+                    Flatpickr Multiple date
+                </span>
+            </div>
+            <input
+                type="text"
+                placeholder="jj/mm/aaaa, jj/mm/aaaa, ..."
+                name="multiflat"
+                value="01/07/2025, 02/07/2025, 03/07/2025"
+                class="input input-bordered input-hdt w-full"
+                flatpickr="multipledate"
+            />
+        </label>
+
+        <label
+            data-field="flatrange"
+            class="form-control w-full h-max col-span-12 md:col-span-4"
+        >
+            <div class="label p-0 px-1 pb-1">
+                <span class="label-text text-sm font-semibold">
+                    Flatpickr Range
+                </span>
+            </div>
+            <input
+                type="text"
+                placeholder="jj/mm/aaaa au jj/mm/aaaa"
+                name="flatrange"
+                value="01/07/2025 au 11/07/2025"
+                class="input input-bordered input-hdt w-full"
+                flatpickr="range"
+            />
+        </label>
+
+
 
 
         <div class="col-span-12">
