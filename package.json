@@ -11,8 +11,8 @@
     "dev": "node --watch server.js",
     "start": "node server.js",
     "format": "npx @biomejs/biome format --write ./src",
-		"lint": "npx @biomejs/biome lint --write ./src",
-		"biome": "npx @biomejs/biome check --write ./src"
+    "lint": "npx @biomejs/biome lint --write ./src",
+    "biome": "npx @biomejs/biome check --write ./src"
   },
   "author": "Fabio RAMOS LOPES",
   "license": "ISC",

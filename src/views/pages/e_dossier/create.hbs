@@ -180,6 +180,27 @@
             />
         </label>
 
+        <label
+            data-field="flatyear"
+            for="flatyear"
+            class="form-control w-full h-max col-span-12 md:col-span-4"
+        >
+            <div class="label p-0 px-1 pb-1">
+                <span class="label-text text-sm font-semibold">
+                    Flatpickr Année
+                </span>
+            </div>
+            <input
+                type="text"
+                placeholder="aaaa"
+                name="flatyear"
+                value=""
+                class="input input-bordered input-hdt w-full"
+                flatpickr="year"
+            />
+        </label>
+
+
         <div class="col-span-12">
             <button class="btn btn-hdt btn-success">
                 <i class="fas fa-plus"></i>
@@ -201,6 +222,7 @@
         if (input._flatpickr) {
             input._flatpickr.destroy();
         };
+
         flatpickr(input, {
             dateFormat: "d/m/Y",
             locale: "fr",

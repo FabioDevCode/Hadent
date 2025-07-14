@@ -3,7 +3,7 @@ export default function errorHandler() {
 		const isAjax = req.xhr || req.headers.accept?.includes("application/json");
 
 		console.error(
-			`[${err.entity || "Unknown"}] erreur sur ${err.method || req.method} ${err.route || req.originalUrl}`, 
+			`[${err.entity || "Unknown"}] erreur sur ${err.method || req.method} ${err.route || req.originalUrl}`,
 			err
 		);
 

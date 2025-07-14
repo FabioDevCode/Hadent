@@ -8,6 +8,7 @@ function initFlatpickr() {
             disableMobile: true
         });
     });
+
     document.querySelectorAll('input[flatpickr="monthyear"]').forEach(function(input) {
         flatpickr(input, {
             locale: "fr",
@@ -24,6 +25,23 @@ function initFlatpickr() {
             ]
         });
     });
+
+    document.querySelectorAll('input[flatpickr="year"]').forEach(function(input) {
+        flatpickr(input, {
+            dateFormat: "Y",
+            disableMobile: true,
+            locale: "fr",
+            plugins: [
+                yearSelectPlugin({
+                    range: 13, // 10 ans avant / après
+                    currentYear: 2030 // optionnel
+                    // minYear: 1990,
+                    // maxYear: 2050
+                })
+            ]
+        });
+    });
+
     document.querySelectorAll('input[flatpickr="datetime"]').forEach(function(input) {
         flatpickr(input, {
             enableTime: true,
@@ -33,6 +51,7 @@ function initFlatpickr() {
             disableMobile: true
         });
     });
+
     document.querySelectorAll('input[flatpickr="time"]').forEach(function(input) {
         flatpickr(input, {
             enableTime: true,
@@ -54,24 +73,24 @@ function initInputmask() {
         let maskConfig;
 
         switch (type) {
-        case "email":
-            maskConfig = { alias: "email" };
-            break;
-        case "phone":
-            // Format téléphone FR : 06 12 34 56 78
-            maskConfig = { mask: "99 99 99 99 99" };
-            break;
-        case "custom":
-            // Exemple : "999-AAA"
-            if (input.dataset.maskPattern) {
-                maskConfig = {
-                    mask: input.dataset.maskPattern
-                };
-            }
-            break;
-        default:
-            console.warn("Type de masque inconnu :", type);
-            return;
+            case "email":
+                maskConfig = { alias: "email" };
+                break;
+            case "phone":
+                // Format téléphone FR : 06 12 34 56 78
+                maskConfig = { mask: "99 99 99 99 99" };
+                break;
+            case "custom":
+                // Exemple : "999-AAA"
+                if (input.dataset.maskPattern) {
+                    maskConfig = {
+                        mask: input.dataset.maskPattern
+                    };
+                }
+                break;
+            default:
+                console.warn("Type de masque inconnu :", type);
+                return;
         }
 
         if (maskConfig) {
